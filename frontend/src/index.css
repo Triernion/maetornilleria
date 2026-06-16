@@ -59,6 +59,9 @@ body {
     }
 }
 
+/* Override Tailwind tracking-tighter (default -0.05em) for legibility */
+.tracking-tighter { letter-spacing: 0 !important; }
+
 /* ---- Industrial utilities ---- */
 @layer utilities {
     .font-display { font-family: 'Barlow Condensed', 'Barlow', sans-serif; }

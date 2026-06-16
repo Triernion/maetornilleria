@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-noise opacity-50" />
       {/* Decorative giant hexagon */}
       <Hexagon
-        className="absolute -right-20 top-1/4 w-[520px] h-[520px] text-orange-mae/5"
+        className="absolute -right-20 top-1/4 w-[520px] h-[520px] text-orange-mae opacity-10"
         strokeWidth={0.5}
       />
 
