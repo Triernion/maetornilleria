@@ -58,7 +58,7 @@ class TestContactSubmissions:
         r = client.post(f"{API}/contact", json=payload, timeout=30)
         assert r.status_code == 200, r.text
         body = r.json()
-        assert body["ok"] is True
+        assert body["ok"]
         assert isinstance(body["id"], str) and len(body["id"]) > 0
         assert "message" in body and isinstance(body["message"], str)
 
@@ -84,7 +84,7 @@ class TestContactSubmissions:
         }
         r = client.post(f"{API}/contact", json=payload, timeout=30)
         assert r.status_code == 200, r.text
-        assert r.json()["ok"] is True
+        assert r.json()["ok"]
 
     # ---------- Validation ----------
     def test_missing_full_name(self, client):

@@ -13,10 +13,10 @@ export default function Industries() {
       {/* Subtle marquee strip */}
       <div className="absolute top-0 left-0 right-0 border-y border-white/10 overflow-hidden">
         <div className="flex animate-marquee whitespace-nowrap py-3 font-display font-bold uppercase text-3xl md:text-5xl text-white/5 tracking-tight">
-          {[...Array(2)].map((_, k) => (
-            <div key={k} className="flex shrink-0">
+          {["loop-a", "loop-b"].map((loopId) => (
+            <div key={loopId} className="flex shrink-0">
               {INDUSTRIES_LIST.map((i) => (
-                <span key={i.slug + k} className="px-8 flex items-center gap-8">
+                <span key={`${i.slug}-${loopId}`} className="px-8 flex items-center gap-8">
                   <span>{i.name}</span>
                   <span className="text-orange-mae">✦</span>
                 </span>

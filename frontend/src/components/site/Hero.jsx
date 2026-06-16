@@ -108,8 +108,8 @@ export default function Hero() {
           className="lg:col-span-4 hidden lg:block"
         >
           <div className="border-l-2 border-orange-mae pl-6 space-y-8">
-            {STATS.map((s, i) => (
-              <div key={i}>
+            {STATS.map((s) => (
+              <div key={s.label}>
                 <div className="font-display font-black text-5xl text-white leading-none">
                   {s.value}
                 </div>
