@@ -1,0 +1,140 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4: Swiss & High-Contrast (Adapted for Heavy Industrial B2B)",
+  "global_vibe": "Solid, precise, authoritative, and heavy-duty. Evokes raw metal, blueprint precision, and high-stakes reliability. No soft edges, no playful 'tech startup' aesthetics.",
+  "typography": {
+    "primary": "Metropolis (Custom @font-face required)",
+    "fallback_heading": "Barlow",
+    "fallback_body": "Chivo",
+    "rules": [
+      "No Inter, No Space Grotesk, No generic SaaS fonts.",
+      "Import fallback fonts via Google Fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700;900&family=Chivo:wght@300;400;600&display=swap');",
+      "Headlines MUST be uppercase or highly structured, utilizing tracking-tight.",
+      "Use bold/black weights (700-900) for hero texts and key metrics to convey 'heavy weight'."
+    ],
+    "scale": {
+      "h1": "text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter uppercase",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-bold",
+      "body": "text-base md:text-lg font-normal leading-relaxed text-slate-300"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary_orange": "#F58220",
+      "secondary_orange": "#FC9F4F",
+      "petroleum_blue": "#3A4C5C",
+      "dark_background": "#12181E",
+      "surface_card": "#1E293B",
+      "border_technical": "rgba(255, 255, 255, 0.1)"
+    },
+    "tailwind_vars_to_inject_in_index_css": {
+      "--background": "210 25% 9%",
+      "--foreground": "0 0% 98%",
+      "--card": "208 23% 29%",
+      "--card-foreground": "0 0% 98%",
+      "--popover": "210 25% 9%",
+      "--popover-foreground": "0 0% 98%",
+      "--primary": "28 92% 54%",
+      "--primary-foreground": "0 0% 100%",
+      "--secondary": "28 97% 65%",
+      "--secondary-foreground": "0 0% 100%",
+      "--muted": "208 23% 20%",
+      "--muted-foreground": "215 20.2% 75.1%",
+      "--accent": "208 23% 35%",
+      "--accent-foreground": "0 0% 98%",
+      "--destructive": "0 62.8% 30.6%",
+      "--destructive-foreground": "0 0% 98%",
+      "--border": "208 23% 40%",
+      "--input": "208 23% 40%",
+      "--ring": "28 92% 54%",
+      "--radius": "0.125rem"
+    }
+  },
+  "ui_elements": {
+    "borders_and_surfaces": {
+      "style": "The 'Technical Grid' Look",
+      "radius": "rounded-none or rounded-sm. Max 4px radius to keep the industrial sharpness.",
+      "borders": "Expose the skeleton. Use 1px solid borders (border-border/40). For critical UI (like quote forms), use a thicker left or bottom border (border-l-4 border-primary) to anchor it."
+    },
+    "buttons": {
+      "primary": "bg-primary text-white font-bold uppercase tracking-wider rounded-none hover:bg-secondary transition-colors duration-300 border-b-4 border-orange-700 active:border-b-0 active:translate-y-1",
+      "secondary": "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold uppercase tracking-wider rounded-none"
+    },
+    "hexagonal_motif": "Use clip-path polygons for certain profile images or small icon wrappers to reference the screw head. Example CSS class: `clip-hexagon { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }`"
+  },
+  "layout": {
+    "spacing": "Generous vertical spacing (py-20 to py-32) between sections. Tight, technical spacing (gap-4) inside data/capability grids.",
+    "grid_strategy": "Use 'Control Room' grid for services and features to maximize scannability. Grid items must be strictly aligned with no jagged bottoms (h-full)."
+  },
+  "sections": [
+    {
+      "name": "Header",
+      "type": "Sticky Nav",
+      "design": "Dark, glassmorphism (backdrop-blur-xl bg-[#12181E]/80), border-b border-white/10. Logo on left, links center, Quote CTA on right. Must be visible always."
+    },
+    {
+      "name": "Hero",
+      "type": "High Impact",
+      "design": "Background image with heavy dark overlay (bg-[#12181E]/80). Left-aligned massive typography. 25+ years badge. Primary CTA: 'Solicita Cotización'. Subtle grid/blueprint CSS pattern over the background."
+    },
+    {
+      "name": "About & Values",
+      "type": "Narrative + Grid",
+      "design": "Split layout: Narrative on left, Industrial visual on right. Below it, a 5-column grid or Bento layout for the 5 values (Honestidad, Responsabilidad, Disciplina, Puntualidad, Dignidad). Use hexagonal icon wrappers for values."
+    },
+    {
+      "name": "Services Grid",
+      "type": "Bento Grid (5 items)",
+      "design": "Cards with solid Petroleum Blue backgrounds, thin borders. 1 large hero service (col-span-2 or row-span-2) and 4 standard ones. Include heavy machinery/metal icons."
+    },
+    {
+      "name": "Industries",
+      "type": "Scannable Visuals",
+      "design": "Use the real backup images as backgrounds for tall cards (aspect-[3/4]). Hover state reveals industry details. Industries: Minería, Cemento, Aeroespacial, Automotriz, Petrolero/Gas."
+    },
+    {
+      "name": "Quote Form Banner & Form",
+      "type": "Conversion Area",
+      "design": "Darkest background section. 2-column layout. Left: Persuasive text, trust cues (contact info, emergency 24/7). Right: Complex form using Shadcn. Form inputs must have square corners, dark backgrounds (bg-slate-900/50), border-white/20, focus:border-primary."
+    },
+    {
+      "name": "Footer",
+      "type": "Industrial Mega-Footer",
+      "design": "Massive py-20. 4 columns (Brand, Services, Contact, Legal). Dark background, subdued text, clear hierarchy. Include logo in negative."
+    }
+  ],
+  "motion": {
+    "style": "Industrial & Professional",
+    "rules": "No bouncy/spring animations. Use Framer Motion with strict, rigid easing (ease: 'circOut' or 'linear'). Fades and slight vertical slides (y: 20 -> 0) for entrance."
+  },
+  "media": {
+    "images_priority": "Use REAL backup images first. Fallback to Unsplash only if necessary.",
+    "urls": {
+      "logo": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/MAE_tornilleria-Logo_Negativo.png",
+      "hero_bg": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/view-heavy-machinery",
+      "hero_bg_fallback": "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwyfHxoZWF2eSUyMGluZHVzdHJ5JTIwbWFudWZhY3R1cmluZyUyMG1pbmluZ3xlbnwwfHx8fDE3ODE1NzcyNzh8MA&ixlib=rb-4.1.0&q=85",
+      "industries": {
+        "mineria": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/excavator-construction-machine",
+        "cemento": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/fabrica_de_cemento",
+        "aeroespacial": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/aerospace",
+        "automotriz": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/automotive",
+        "petrolero": "/domains/maetornilleria.com.mx/public_html/wp-content/uploads/2026/01/oil"
+      },
+      "services_context": [
+        "https://images.unsplash.com/photo-1548683726-203119be6a39?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxtZXRhbCUyMHNjcmV3cyUyMGZhc3RlbmVycyUyMGNuY3xlbnwwfHx8fDE3ODE1NzcyNzh8MA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1625464735911-5e9074afe9cf?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxtZXRhbCUyMHNjcmV3cyUyMGZhc3RlbmVycyUyMGNuY3xlbnwwfHx8fDE3ODE1NzcyNzh8MA&ixlib=rb-4.1.0&q=85"
+      ]
+    }
+  },
+  "instructions_to_main_agent": {
+    "1": "You are building a Heavy Industry B2B site. Strip out all Vercel/SaaS defaults from Shadcn components. Override rounded-xl to rounded-none or rounded-sm. No soft shadows. No gradients except dark technical overlays.",
+    "2": "For typography, implement Metropolis via @font-face if possible, otherwise rely on the Google Fonts import (Barlow for headings, Chivo for body). Apply uppercase and tracking-tight to major headers.",
+    "3": "The brand's identity is tied to hexagons (screw heads). Use CSS clip-path: polygon() to create hexagonal containers for icons or small decorative images.",
+    "4": "The Quote Form (Cotización) is complex. Must use Shadcn Form elements with strict validation, connected to the FastAPI backend placeholder endpoints.",
+    "5": "Data-TestIDs are MANDATORY. Apply `data-testid` attributes (kebab-case, role-based) to all buttons, form inputs, links, and major sections.",
+    "6": "Use Lucide-React icons (Hexagon, Factory, HardHat, Wrench, Settings, Clock) heavily in the Services and Values grids.",
+    "7": "Do NOT use placeholder.com images. Use the precise URLs provided in the media section above.",
+    "8": "Inject the provided HSL variables exactly into index.css to configure the dark industrial palette."
+  }
+}
