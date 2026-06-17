@@ -127,3 +127,5 @@ body {
 ::-webkit-scrollbar-track { background: #0E141A; }
 ::-webkit-scrollbar-thumb { background: #2a3a4a; border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: #F58220; }
+
+#emergent-badge { display: none;}
