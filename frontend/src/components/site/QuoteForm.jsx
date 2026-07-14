@@ -294,7 +294,13 @@ function ContactRow({ label, value, href, testId }) {
     </>
   );
   return href ? (
-    <a href={href} data-testid={testId} className="block group">
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+      data-testid={testId}
+      className="block group"
+    >
       {inner}
     </a>
   ) : (

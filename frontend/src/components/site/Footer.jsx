@@ -49,7 +49,7 @@ export default function Footer() {
               label={COMPANY.email}
               href={`mailto:${COMPANY.email}`}
             />
-            <FooterRow icon={<MapPin size={16} />} label={COMPANY.address} />
+            <FooterRow icon={<MapPin size={16} />} label={COMPANY.address} href={COMPANY.mapsUrl} />
             <FooterRow icon={<Clock size={16} />} label={COMPANY.hours} />
           </div>
         </div>
