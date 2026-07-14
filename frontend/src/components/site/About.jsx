@@ -36,8 +36,8 @@ export default function About() {
         <div className="lg:col-span-7 relative">
           <div className="relative aspect-[4/5] sm:aspect-[16/12] overflow-hidden corner-cuts">
             <img
-              src="/assets/mae/working.jpg"
-              alt="Taller MAE"
+              src="/assets/mae/taller-mae.jpg"
+              alt="Taller MAE Tornillería en Hidalgo, México"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#12181E]/80 via-transparent to-orange-mae/20" />
